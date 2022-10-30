@@ -1,0 +1,35 @@
+.hero__container .hero__container__wrapper {
+  display: flex;
+  justify-content: center;
+}
+.hero__container .hero__container__wrapper li {
+  min-width: 100px;
+  list-style: none;
+  margin: 10px;
+  padding: 10px;
+}
+.hero__container .hero__container__wrapper li button {
+  border-radius: 10px;
+  border: none;
+  background-color: #343232;
+  padding: 0;
+  overflow: hidden;
+  color: white;
+}
+.hero__container .hero__container__wrapper li button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+.hero__container .hero__container__wrapper li button:active {
+  background-color: black;
+}
+.hero__container .hero__container__wrapper li .badge {
+  background-color: gray;
+  padding: 5px;
+  margin-right: 5px;
+}
+.hero__container .hero__container__wrapper li span {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=heroes.component.css.map */

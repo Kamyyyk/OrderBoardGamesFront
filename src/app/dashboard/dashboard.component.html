@@ -1,0 +1,15 @@
+<h2>Nawigacja</h2>
+<nav>
+  <button type="button">
+    <a routerLink="/dashboard">Home</a>
+  </button>
+  <button type="button">
+    <a routerLink="/heroes">Heroes</a>
+  </button>
+</nav>
+
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a *ngFor="let hero of heroes"
+     >{{hero.name}}</a>
+</div>
