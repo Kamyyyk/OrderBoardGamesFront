@@ -1,9 +1,19 @@
 <mat-toolbar>
-  <span>Witamy w naszej wypożyczalni dziwki</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <span>Zalogowany jako: {{user}}</span>
+  <mat-toolbar-row>
+    <button mat-button (click)="openMenu()"><mat-icon>menu</mat-icon></button>
+    <span>Witamy w naszej wypożyczalni dziwki</span>
+    <span class="example-spacer"></span>
+    <span>Zalogowany jako: {{ user }}</span>
+  </mat-toolbar-row>
 </mat-toolbar>
-<app-dashboard></app-dashboard>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <mat-icon (click)="openMenu()" class="mat-icon">close</mat-icon>
+    <nav class="navigation__wrapper">
+      <a routerLink="/">Home</a>
+      <a routerLink="/heroes">Heroes</a>
+      <a routerLink="/boardGames">BoardGames</a>
+    </nav>
+  </mat-sidenav>
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
