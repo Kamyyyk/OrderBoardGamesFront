@@ -19,6 +19,7 @@ import { BoardGamesComponent } from './board-games/board-games.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MainHeaderComponent } from './main-header/main-header.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MainHeaderComponent } from './main-header/main-header.component';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
