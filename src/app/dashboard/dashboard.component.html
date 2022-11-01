@@ -1,15 +1,15 @@
-<h2>Nawigacja</h2>
-<nav>
-  <button type="button">
-    <a routerLink="/dashboard">Home</a>
-  </button>
-  <button type="button">
-    <a routerLink="/heroes">Heroes</a>
-  </button>
-</nav>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="push" [(opened)]="opened">
+      <nav class="navigation__wrapper">
+        <a routerLink="/">Home</a>
+        <a routerLink="/heroes">Heroes</a>
+        <a routerLink="/boardGames">BoardGames</a>
+      </nav>
+  </mat-sidenav>
 
-<h2>Top Heroes</h2>
-<div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-     >{{hero.name}}</a>
-</div>
+  <mat-sidenav-content>
+    <button mat-icon-button (click)="openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
