@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardGameDetailsService } from '../board-game-details/board-game-details.service';
 import { BoardGame } from '../board-game-details/board-game';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-board-game-details-table',
@@ -9,21 +9,37 @@ import {Router} from "@angular/router";
   styleUrls: ['./board-games-table.component.scss'],
 })
 export class BoardGamesTableComponent implements OnInit {
-  dataSource: BoardGame[] = [];
+  boardGames: BoardGame[] = [];
   displayedColumns: string[] = ['id', 'name', 'players', 'price'];
+  boardGame: BoardGame | undefined;
+  openEditModal: boolean | undefined;
+  submitted: boolean | undefined;
 
   getBoardGames(): void {
-    this.dataSource = this.boardGamesService.getBoardGames()
+    this.boardGames = this.boardGamesService.getBoardGames();
   }
 
   getBoardGame(id: number) {
-    return this.router.navigateByUrl(`./boardGameDetails/${id}`)
+    return this.router.navigateByUrl(`./boardGameDetails/${id}`);
   }
 
-  constructor(private boardGamesService: BoardGameDetailsService, private router: Router) { }
+  editBoardGame(boardGame: BoardGame) {
+    this.boardGame = { ...boardGame };
+    this.submitted = false;
+    this.openEditModal = true;
+  }
+
+  hideModal() {
+    this.openEditModal = false;
+  }
+
+  constructor(
+    private boardGamesService: BoardGameDetailsService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getBoardGames();
-    console.log(this.dataSource);
+    console.log(this.boardGames);
   }
 }

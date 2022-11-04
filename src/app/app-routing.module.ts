@@ -43,7 +43,7 @@ const routes: Routes = [
     component: BoardGamesTableComponent,
   },
   {
-    path: 'boardGameDetails/:id',
+    path: 'boardGames/boardGameDetails/:id',
     component: BoardGameDetailsComponent,
   }
 

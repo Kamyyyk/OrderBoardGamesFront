@@ -5,10 +5,10 @@
       <button class="p-button-danger" pButton pRipple icon="pi pi-trash"></button>
     </ng-template>
   </p-toolbar>
-<p-table  [value]="dataSource" [rows]="10" [paginator]="true" responsiveLayout="scroll">
+<p-table  [value]="boardGames" [rows]="10" [paginator]="true" responsiveLayout="scroll">
   <ng-template pTemplate="header">
     <tr>
-      <th style="width: 3rem">
+      <th style="width: 0.5rem">
         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
       </th>
       <th>Lp</th>
@@ -26,13 +26,38 @@
       <td>{{game.name}}</td>
       <td>{{game.price}} PLN</td>
       <td>
-        <a routerLink="/boardGameDetails/{{game.id}}">
+        <a routerLink="/boardGames/boardGameDetails/{{game.id}}">
         <button pButton pRipple icon="pi pi-info-circle p-mr-2" class="p-button-rounded"></button>
         </a>
-        <button pButton pRipple icon="pi pi-pencil p-mr-2" class="p-button-rounded"></button>
+        <button pButton pRipple icon="pi pi-pencil p-mr-2" class="p-button-rounded" (click)="editBoardGame(game)"></button>
         <button pButton pRipple icon="pi pi-trash" class="p-button-rounded" (click)="getBoardGame(game.id)"></button>
       </td>
     </tr>
   </ng-template>
 </p-table>
 </div>
+
+<p-dialog [(visible)]="openEditModal" header="Jebać PIS" [modal]="true" styleClass="p-fluid">
+  <ng-template pTemplate="content">
+    <div class="p-field">
+      <label for="name">Nazwa gry</label>
+      <input type="text" pInputText id="name">
+<!--      <small class="p-invalid" *ngIf="submitted && !boardGame.name ">Wpisz nazwę gry!</small>-->
+    </div>
+    <div class="p-formgrid p-grid">
+      <div class="p-field p-col">
+        <label for="price" >Cena</label>
+        <p-inputNumber id="price" mode="currency" currency="PLN"></p-inputNumber>
+      </div>
+<!--      <div class="p-field p-col">-->
+<!--        <label for="price">Ilość</label>-->
+<!--      </div>-->
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Anuluj" icon="pi pi-times" class="p-button-text" (click)="hideModal()"></button>
+    <button pButton pRipple label="Zaakceptuj" icon="pi pi-check" class="p-button-text" (click)="hideModal()"></button>
+  </ng-template>
+
+</p-dialog>
