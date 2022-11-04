@@ -1,63 +1,122 @@
 <div class="card">
-  <p-toolbar>
+  <p-toolbar class="card__toolbar">
     <ng-template pTemplate="left">
-      <button class="p-button-success p-mr-2" pButton pRipple label="Dodaj grę" icon="pi pi-plus"></button>
-      <button class="p-button-danger" pButton pRipple icon="pi pi-trash"></button>
+      <button
+        class="p-button-success"
+        pButton
+        pRipple
+        label="Dodaj grę"
+        icon="pi pi-plus"
+      ></button>
+      <button
+        class="p-button-danger"
+        pButton
+        pRipple
+        icon="pi pi-trash"
+      ></button>
     </ng-template>
   </p-toolbar>
-<p-table  [value]="boardGames" [rows]="10" [paginator]="true" responsiveLayout="scroll">
-  <ng-template pTemplate="header">
-    <tr>
-      <th style="width: 0.5rem">
-        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-      </th>
-      <th>Lp</th>
-      <th>Nazwa</th>
-      <th>Cena</th>
-      <td>Akcje</td>
-    </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-game>
-    <tr>
-      <td>
-        <p-tableCheckbox [value]="game"></p-tableCheckbox>
-      </td>
-      <td>{{game.id}}</td>
-      <td>{{game.name}}</td>
-      <td>{{game.price}} PLN</td>
-      <td>
-        <a routerLink="/boardGames/boardGameDetails/{{game.id}}">
-        <button pButton pRipple icon="pi pi-info-circle p-mr-2" class="p-button-rounded"></button>
-        </a>
-        <button pButton pRipple icon="pi pi-pencil p-mr-2" class="p-button-rounded" (click)="editBoardGame(game)"></button>
-        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded" (click)="getBoardGame(game.id)"></button>
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+  <p-table
+    [value]="boardGames"
+    [rows]="10"
+    [paginator]="true"
+    responsiveLayout="scroll"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 0.5rem">
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th style="width: 100px">Lp</th>
+        <th style="width: 300px">Nazwa</th>
+        <th style="width: 300px">Nazwa</th>
+        <th style="width: 300px">Nazwa</th>
+        <th>Cena</th>
+        <td>Akcje</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-game>
+      <tr>
+        <td>
+          <p-tableCheckbox [value]="game"></p-tableCheckbox>
+        </td>
+        <td>{{ game.id }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.price }} PLN</td>
+
+        <td>
+          <a routerLink="/boardGames/boardGameDetails/{{ game.id }}">
+            <button
+              pButton
+              pRipple
+              icon="pi pi-info-circle p-mr-2"
+              class="p-button-rounded"
+            ></button>
+          </a>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-pencil p-mr-2"
+            class="p-button-rounded"
+            (click)="editBoardGame(game)"
+          ></button>
+          <button
+            pButton
+            pRipple
+            icon="pi pi-trash"
+            class="p-button-rounded"
+            (click)="getBoardGame(game.id)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
 
-<p-dialog [(visible)]="openEditModal" header="Jebać PIS" [modal]="true" styleClass="p-fluid">
+<p-dialog
+  [(visible)]="openEditModal"
+  header="Jebać PIS"
+  [modal]="true"
+  styleClass="p-fluid"
+>
   <ng-template pTemplate="content">
     <div class="p-field">
       <label for="name">Nazwa gry</label>
-      <input type="text" pInputText id="name">
-<!--      <small class="p-invalid" *ngIf="submitted && !boardGame.name ">Wpisz nazwę gry!</small>-->
+      <input type="text" pInputText id="name" />
+      <small class="p-invalid" *ngIf="submitted && !boardGame?.name"
+        >Wpisz nazwę gry!</small
+      >
     </div>
     <div class="p-formgrid p-grid">
       <div class="p-field p-col">
-        <label for="price" >Cena</label>
-        <p-inputNumber id="price" mode="currency" currency="PLN"></p-inputNumber>
+        <label for="price">Cena</label>
+        <p-inputNumber
+          id="price"
+          mode="currency"
+          currency="PLN"
+        ></p-inputNumber>
       </div>
-<!--      <div class="p-field p-col">-->
-<!--        <label for="price">Ilość</label>-->
-<!--      </div>-->
     </div>
   </ng-template>
 
   <ng-template pTemplate="footer">
-    <button pButton pRipple label="Anuluj" icon="pi pi-times" class="p-button-text" (click)="hideModal()"></button>
-    <button pButton pRipple label="Zaakceptuj" icon="pi pi-check" class="p-button-text" (click)="hideModal()"></button>
+    <button
+      pButton
+      pRipple
+      label="Anuluj"
+      icon="pi pi-times"
+      class="p-button-text"
+      (click)="hideModal()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="Zaakceptuj"
+      icon="pi pi-check"
+      class="p-button-text"
+      (click)="hideModal()"
+    ></button>
   </ng-template>
-
 </p-dialog>

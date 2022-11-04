@@ -1,8 +1,11 @@
 .card {
   margin: 100px;
-  &__button {
-    &--add {
-      margin: 100px;
-    }
+
+  .p-button.p-button-success {
+    margin-right: 10px ;
+  }
+
+  .p-button.p-button-icon-only.p-button-rounded {
+    margin-right: 5px;
   }
 }

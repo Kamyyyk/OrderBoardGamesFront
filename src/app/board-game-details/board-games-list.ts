@@ -31,4 +31,34 @@ export const BOARD_GAMES_DATA: BoardGame[] = [
     players: 4,
     price: 80,
   },
+  {
+    id: 6,
+    name: 'Tajniacy',
+    players: 4,
+    price: 80,
+  },
+  {
+    id: 7,
+    name: 'Tajniacy',
+    players: 4,
+    price: 80,
+  },
+  {
+    id: 8,
+    name: 'Tajniacy',
+    players: 4,
+    price: 80,
+  },
+  {
+    id: 9,
+    name: 'Tajniacy',
+    players: 4,
+    price: 80,
+  },
+  {
+    id: 10,
+    name: 'Tajniacy',
+    players: 4,
+    price: 80,
+  },
 ];

@@ -1,8 +1,11 @@
 .card {
   margin: 100px;
 }
-.card__button--add {
-  margin: 100px;
+.card .p-button.p-button-success {
+  margin-right: 10px;
+}
+.card .p-button.p-button-icon-only.p-button-rounded {
+  margin-right: 5px;
 }
 
-/*# sourceMappingURL=board-game-details-table.component.css.map */
+/*# sourceMappingURL=board-games-table.component.css.map */
