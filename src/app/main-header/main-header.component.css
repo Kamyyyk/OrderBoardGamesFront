@@ -7,10 +7,6 @@
   min-width: 0;
 }
 
-.mat-drawer-container {
-  background-color: white;
-}
-
 .mat-icon {
   font-size: 20px;
 }
@@ -26,7 +22,7 @@
   height: 100%;
 }
 .mat-sidenav-container a {
-  color: white;
+  color: black;
   text-decoration: none;
   margin: 10px 0;
   font-size: 20px;

@@ -5,7 +5,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import {BoardGamesComponent} from "./board-games/board-games.component";
+import {BoardGameDetailsComponent} from "./board-game-details/board-game-details.component";
 import {BoardGamesTableComponent} from "./board-games-table/board-games-table.component";
 
 const routes: Routes = [
@@ -43,8 +43,8 @@ const routes: Routes = [
     component: BoardGamesTableComponent,
   },
   {
-    path: 'boardGame/:id',
-    component: BoardGamesComponent,
+    path: 'boardGameDetails/:id',
+    component: BoardGameDetailsComponent,
   }
 
 ];

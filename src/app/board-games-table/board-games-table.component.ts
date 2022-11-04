@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { BoardGamesService } from '../board-games/board-games.service';
-import { BoardGame } from '../board-games/board-game';
+import { BoardGameDetailsService } from '../board-game-details/board-game-details.service';
+import { BoardGame } from '../board-game-details/board-game';
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-board-games-table',
+  selector: 'app-board-game-details-table',
   templateUrl: './board-games-table.component.html',
   styleUrls: ['./board-games-table.component.scss'],
 })
@@ -15,7 +16,11 @@ export class BoardGamesTableComponent implements OnInit {
     this.dataSource = this.boardGamesService.getBoardGames()
   }
 
-  constructor(private boardGamesService: BoardGamesService) { }
+  getBoardGame(id: number) {
+    return this.router.navigateByUrl(`./boardGameDetails/${id}`)
+  }
+
+  constructor(private boardGamesService: BoardGameDetailsService, private router: Router) { }
 
   ngOnInit(): void {
     this.getBoardGames();

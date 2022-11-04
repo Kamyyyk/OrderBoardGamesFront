@@ -1,23 +1,38 @@
-<table mat-table [dataSource]="dataSource">
-
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> Lp </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-  </ng-container>
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nazwa </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-  <ng-container matColumnDef="players">
-    <th mat-header-cell *matHeaderCellDef> Ilość graczy </th>
-    <td mat-cell *matCellDef="let element"> {{element.players}} </td>
-  </ng-container>
-  <ng-container matColumnDef="price">
-    <th mat-header-cell *matHeaderCellDef> Cena </th>
-    <td mat-cell *matCellDef="let element"> {{element.price}} PLN </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-</table>
+<div class="card">
+  <p-toolbar>
+    <ng-template pTemplate="left">
+      <button class="p-button-success p-mr-2" pButton pRipple label="Dodaj grę" icon="pi pi-plus"></button>
+      <button class="p-button-danger" pButton pRipple icon="pi pi-trash"></button>
+    </ng-template>
+  </p-toolbar>
+<p-table  [value]="dataSource" [rows]="10" [paginator]="true" responsiveLayout="scroll">
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 3rem">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th>Lp</th>
+      <th>Nazwa</th>
+      <th>Cena</th>
+      <td>Akcje</td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-game>
+    <tr>
+      <td>
+        <p-tableCheckbox [value]="game"></p-tableCheckbox>
+      </td>
+      <td>{{game.id}}</td>
+      <td>{{game.name}}</td>
+      <td>{{game.price}} PLN</td>
+      <td>
+        <a routerLink="/boardGameDetails/{{game.id}}">
+        <button pButton pRipple icon="pi pi-info-circle p-mr-2" class="p-button-rounded"></button>
+        </a>
+        <button pButton pRipple icon="pi pi-pencil p-mr-2" class="p-button-rounded"></button>
+        <button pButton pRipple icon="pi pi-trash" class="p-button-rounded" (click)="getBoardGame(game.id)"></button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+</div>

@@ -1,7 +1,8 @@
-table {
-  width: 90%;
-  height: 50%;
-  margin: 100px auto;
+.card {
+  margin: 100px;
+}
+.card__button--add {
+  margin: 100px;
 }
 
-/*# sourceMappingURL=board-games-table.component.css.map */
+/*# sourceMappingURL=board-game-details-table.component.css.map */

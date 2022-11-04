@@ -1,6 +1,8 @@
-table {
-  width: 90%;
-  height: 50%;
-  margin: 100px auto;
+.card {
+  margin: 100px;
+  &__button {
+    &--add {
+      margin: 100px;
+    }
+  }
 }
-
