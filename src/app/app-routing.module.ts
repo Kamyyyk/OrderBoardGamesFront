@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import {BoardGameDetailsComponent} from "./board-game-details/board-game-details.component";
 import {BoardGamesTableComponent} from "./board-games-table/board-games-table.component";
+import {ContactComponent} from "./contact/contact.component";
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'boardGames/boardGameDetails/:id',
     component: BoardGameDetailsComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   }
 
 ];

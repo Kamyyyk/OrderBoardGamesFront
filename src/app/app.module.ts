@@ -33,6 +33,8 @@ import {RippleModule} from "primeng/ripple";
 import {FileUploadModule} from "primeng/fileupload";
 import {MatCardModule} from "@angular/material/card";
 import {InputTextModule} from "primeng/inputtext";
+import { ContactComponent } from './contact/contact.component';
+import {InputTextareaModule} from "primeng/inputtextarea";
 
 
 @NgModule({
@@ -46,6 +48,7 @@ import {InputTextModule} from "primeng/inputtext";
     BoardGamesTableComponent,
     BoardGameDetailsComponent,
     MainHeaderComponent,
+    ContactComponent,
   ],
     imports: [
         BrowserModule,
@@ -73,6 +76,7 @@ import {InputTextModule} from "primeng/inputtext";
         FileUploadModule,
         MatCardModule,
         InputTextModule,
+        InputTextareaModule,
     ],
   providers: [],
   bootstrap: [AppComponent],
