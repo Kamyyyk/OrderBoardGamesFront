@@ -1,9 +1,10 @@
+<p-toast></p-toast>
 <div class="contact__container">
   <div class="contact__container__wrapper">
     <h1>Formularz kontaktowy</h1>
       <div class="contact__container__label">
         <label class="block" for="value1">Imię</label>
-        <input id="value1" type="text" pInputText/>
+        <input id="value1" type="text" pInputText class="p-inputtext-sm"/>
       </div>
       <div class="contact__container__label">
         <label for="value1">Adres email</label>
@@ -14,7 +15,7 @@
         <textarea rows="3" cols="35" pInputTextarea></textarea>
       </div>
       <div class="contact__container__button__wrapper">
-        <p-button label="Wyślij"></p-button>
+        <p-button label="Wyślij" (onClick)="showSuccess()"></p-button>
       </div>
   </div>
 </div>

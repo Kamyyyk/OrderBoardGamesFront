@@ -12,7 +12,8 @@
   align-items: center;
 }
 .contact__container__wrapper h1 {
-  margin-top: 50px;
+  margin-top: 66px;
+  font-size: 40px;
 }
 .contact__container__label {
   display: flex;
