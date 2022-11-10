@@ -7,7 +7,7 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" [(opened)]="opened">
+  <mat-sidenav #drawer mode="side" [(opened)]="opened">
     <mat-icon (click)="openMenu()" class="mat-icon">close</mat-icon>
     <nav class="navigation__wrapper">
       <a routerLink="/">Strona główna</a>

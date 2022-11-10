@@ -2,18 +2,29 @@
   background-color: rgba(78, 131, 164, 0.37);
   max-width: 700px;
   min-height: 500px;
-  margin: 150px auto;
+  margin: auto;
   border-radius: 50px;
+  position: relative;
 }
-.contact__container__wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.contact__container__title__box {
+  text-align: center;
+  position: absolute;
+  left: 18%;
+  margin-top: 55px;
 }
-.contact__container__wrapper h1 {
-  margin-top: 66px;
-  font-size: 40px;
+.contact__container__title__box h1 {
+  font-size: 50px;
+}
+.contact__container__box {
+  width: 50%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contact__container__box__wrapper--title h1 {
+  font-size: 35px;
+  text-align: center;
 }
 .contact__container__label {
   display: flex;
@@ -21,17 +32,13 @@
 }
 .contact__container__label input {
   margin-bottom: 10px;
-  width: 300px;
 }
 .contact__container__label h5 {
   margin: 0;
 }
-.contact__container__button__wrapper {
-  display: flex;
-  margin: 15px 0;
-}
-.contact__container__button__wrapper .p-button {
-  background: red;
+.contact__container__button__box__wrapper {
+  text-align: center;
+  margin: 10px 0;
 }
 
 /*# sourceMappingURL=contact.component.css.map */

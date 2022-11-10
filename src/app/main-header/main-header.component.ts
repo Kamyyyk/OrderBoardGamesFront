@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatDrawer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-main-header',
@@ -8,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class MainHeaderComponent implements OnInit {
   user: string | undefined
   opened: boolean | undefined
+  @ViewChild('drawer') drawer: MatDrawer | undefined
 
   constructor() { }
 
   openMenu(): void {
-    this.opened = !this.opened
+    this.opened = !this.drawer?.opened
+    console.log(this.drawer?.opened)
   }
 
   ngOnInit(): void {

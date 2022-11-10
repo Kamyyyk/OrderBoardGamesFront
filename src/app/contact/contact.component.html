@@ -1,21 +1,30 @@
 <p-toast></p-toast>
 <div class="contact__container">
-  <div class="contact__container__wrapper">
-    <h1>Formularz kontaktowy</h1>
+  <div class="contact__container__title__box">
+    <div class="contact__container__title__box__wrapper">
+      <h1>Formularz kontaktowy</h1>
+    </div>
+  </div>
+
+  <div class="contact__container__box">
+    <div class="contact__container__box__wrapper">
       <div class="contact__container__label">
         <label class="block" for="value1">Imię</label>
-        <input id="value1" type="text" pInputText class="p-inputtext-sm"/>
+        <input id="value1" type="text" pInputText class="p-inputtext-sm" />
       </div>
       <div class="contact__container__label">
         <label for="value1">Adres email</label>
-        <input type="text" pInputText/>
+        <input type="text" pInputText />
       </div>
       <div class="contact__container__label">
         <label for="value1">Opis problemu</label>
-        <textarea rows="3" cols="35" pInputTextarea></textarea>
+        <textarea style="max-height: 80px" pInputTextarea [autoResize]="true"></textarea>
       </div>
-      <div class="contact__container__button__wrapper">
-        <p-button label="Wyślij" (onClick)="showSuccess()"></p-button>
+      <div class="contact__container__button__box">
+        <div class="contact__container__button__box__wrapper">
+          <p-button label="Wyślij" (onClick)="showSuccess()"></p-button>
+        </div>
       </div>
+    </div>
   </div>
 </div>
