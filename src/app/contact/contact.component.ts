@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import {NotificationService} from "../notification.service";
+import {NotificationService} from "../service/notification/notification.service";
 
 @Component({
   selector: 'app-contact',

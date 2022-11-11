@@ -1,20 +1,22 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <button mat-button (click)="openMenu()"><mat-icon>menu</mat-icon></button>
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+    <button (click)="openMenu()"><i class="pi pi-bars"></i></button>
     <span>Witamy w naszej wypożyczalni dziwki</span>
-    <span class="example-spacer"></span>
-    <span>Zalogowany jako: {{ user }}</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #drawer mode="side" [(opened)]="opened">
-    <mat-icon (click)="openMenu()" class="mat-icon">close</mat-icon>
-    <nav class="navigation__wrapper">
-      <a routerLink="/">Strona główna</a>
-      <a routerLink="/heroes">Heroes</a>
-      <a routerLink="/boardGames">Gry planszowe</a>
-      <a routerLink="/contact">Kontakt</a>
-    </nav>
-  </mat-sidenav>
-  <router-outlet></router-outlet>
-</mat-sidenav-container>
+  </div>
+  <div class="p-toolbar-group-right">
+    <span> Zalogowany jako: {{ user }}</span>
+    <span><a (click)="logout()">Wyloguj</a></span>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="opened" [baseZIndex]="10000">
+  <nav class="navigation__wrapper">
+    <a routerLink="/">Strona główna</a>
+    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/boardGames">Gry planszowe</a>
+    <a routerLink="/contact">Kontakt</a>
+  </nav>
+</p-sidebar>
+
+
+
