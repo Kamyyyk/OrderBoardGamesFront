@@ -1,0 +1,47 @@
+<div class="login__container">
+  <div class="login__container__box">
+    <div class="login__container__box__wrapper">
+      <div class="login--title">
+        <h1>Zaloguj się</h1>
+      </div>
+      <div class="login--box">
+        <form
+          name="form"
+          (ngSubmit)="onSubmit(signInForm)"
+          #signInForm="ngForm"
+        >
+          <div class="login-form">
+            <label class="label-text" for="username">Użytkownik </label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              pInputText
+              required
+              ngModel
+              placeholder="Nazwa użytkownika"
+            />
+            <small *ngIf="isFormInvalid" id="username-help" class="p-error block">Błędna nazwa użytkownika</small>
+          </div>
+          <div class="login-form">
+            <label class="label-text" for="password">Hasło</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              pInputText
+              ngModel
+              placeholder="Hasło"
+            />
+            <small *ngIf="isFormInvalid" id="password-help" class="p-error block">Błędne hasło</small>
+          </div>
+          <div class="login-form--button">
+            <button type="submit">Zaloguj</button>
+          </div>
+
+          <div></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

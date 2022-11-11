@@ -1,0 +1,41 @@
+.login__container {
+  max-width: 350px;
+  min-height: 400px;
+  margin: 200px auto;
+  background-color: rgba(78, 131, 164, 0.37);
+  position: relative;
+
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &__wrapper {
+      .login--title {
+        text-align: center;
+      }
+
+      .login--box {
+        .login-form {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 20px;
+
+          .label-text {
+            font-size: 15px;
+            margin-bottom: 5px;
+          }
+
+          &--button {
+            margin: 10px;
+            text-align: center;
+            button {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

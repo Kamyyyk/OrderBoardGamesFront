@@ -1,0 +1,34 @@
+.login__container {
+  max-width: 350px;
+  min-height: 400px;
+  margin: 200px auto;
+  background-color: rgba(78, 131, 164, 0.37);
+  position: relative;
+}
+.login__container__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.login__container__box__wrapper .login--title {
+  text-align: center;
+}
+.login__container__box__wrapper .login--box .login-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.login__container__box__wrapper .login--box .login-form .label-text {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.login__container__box__wrapper .login--box .login-form--button {
+  margin: 10px;
+  text-align: center;
+}
+.login__container__box__wrapper .login--box .login-form--button button {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=login.component.css.map */
