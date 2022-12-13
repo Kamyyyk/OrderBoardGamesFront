@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -46,8 +44,6 @@ import {SidebarModule} from "primeng/sidebar";
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent,
-    MainMenuComponent,
     BoardGamesTableComponent,
     BoardGameDetailsComponent,
     MainHeaderComponent,

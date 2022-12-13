@@ -4,7 +4,7 @@
     <span>Witamy w naszej wypożyczalni dziwki</span>
   </div>
   <div class="p-toolbar-group-right">
-    <span> Zalogowany jako: {{ user }}</span>
+    <span> Zalogowany jako: {{ user.toUpperCase() }}</span>
     <span><a (click)="logout()">Wyloguj</a></span>
   </div>
 </p-toolbar>

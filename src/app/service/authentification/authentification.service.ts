@@ -13,6 +13,7 @@ export class AuthentificationService {
   constructor(private router: Router) { }
 
   authenticate(signInData: SignInData): boolean {
+    console.log(this.checkCredentials(signInData))
     if (this.checkCredentials(signInData)) {
       this.isAuthenticated = true;
       this.user = signInData.getUserName()

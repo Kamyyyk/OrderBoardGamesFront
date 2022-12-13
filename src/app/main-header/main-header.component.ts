@@ -1,7 +1,8 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { LoginComponent } from '../login/login.component';
-import {AuthentificationService} from "../service/authentification/authentification.service";
+import { AuthentificationService } from '../service/authentification/authentification.service';
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-main-header',
@@ -9,26 +10,28 @@ import {AuthentificationService} from "../service/authentification/authentificat
   styleUrls: ['./main-header.component.scss'],
   providers: [LoginComponent, AuthentificationService],
 })
-export class MainHeaderComponent implements OnInit {
-  opened = false
-  logged = false
-  user = this.authenticationService.user
+export class MainHeaderComponent  {
+  opened = false;
+  logged = false;
+  user = this.cookie.get('user')
 
 
-  constructor(private login: LoginComponent, private authenticationService: AuthentificationService) {
-  }
+  constructor(
+    private login: LoginComponent,
+    private authenticationService: AuthentificationService,
+    private cookie: CookieService
+  ) {}
 
   openMenu(): void {
-    this.opened = !this.opened
-    console.log(this.opened)
+    this.opened = !this.opened;
+    console.log(this.opened);
   }
 
   logout() {
-    this.authenticationService.logout()
+    this.authenticationService.logout();
   }
 
-
-
-  ngOnInit(): void {
+  ngOnChange(): void {
+    console.log(this.user)
   }
 }
